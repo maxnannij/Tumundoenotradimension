@@ -323,19 +323,88 @@ h2::after {
     resize: vertical; /* Permite redimensionar verticalmente */
 }
 
-.contact-section .social-links {
-    margin-top: 30px;
-    font-size: 1.1rem;
+/* Estilos para la nueva sección de Contacto (sin formulario) */
+.contact-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #f9f9f9;
 }
 
-.contact-section .social-links a {
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column; /* Apilar en dispositivos móviles */
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-bottom: 40px;
+}
+
+/* Estilo para el botón general de contacto (Email) */
+.contact-btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    width: fit-content; /* Se ajusta al contenido */
+}
+
+/* Estilo para el botón de WhatsApp */
+.whatsapp-btn {
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Verde de WhatsApp */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851; /* Tono más oscuro al pasar el ratón */
+}
+
+.whatsapp-icon {
+    width: 28px; /* Tamaño del icono */
+    height: 28px;
+    margin-right: 10px;
+    vertical-align: middle; /* Alineación vertical */
+}
+
+.whatsapp-number {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.whatsapp-number a {
     color: #007bff;
     text-decoration: none;
-    margin: 0 10px;
+    font-weight: bold;
 }
 
-.contact-section .social-links a:hover {
+.whatsapp-number a:hover {
     text-decoration: underline;
+}
+
+
+/* Media Queries para Responsividad del Contacto */
+@media (min-width: 768px) {
+    .contact-options {
+        flex-direction: row; /* En línea en pantallas grandes */
+        justify-content: center;
+    }
 }
 
 /* Footer */
