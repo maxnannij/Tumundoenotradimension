@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu mundo en otra dimensión</title> <!-- Título corregido: acento en "dimensión" -->
+    <title>Tu mundo en otra dimensión</title>
     <meta name="description" content="Portafolio profesional de diseño 3D especializado en visualización de productos, ambientes, arquitectura y más.">
     
     <!-- Enlace a tu archivo CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Google Fonts (ejemplo, puedes cambiar la fuente) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     
     <!-- Icono de la pestaña del navegador (favicon) -->
-    <!-- Asegúrate de tener un archivo 'favicon.png' en la carpeta 'images/' -->
     <link rel="icon" href="images/favicon.png" type="image/png">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="#">Tu mundo en otra dimensión</a> <!-- Texto del logo corregido -->
+                <a href="#">Tu mundo en otra dimensión</a>
             </div>
             <nav>
                 <ul>
@@ -48,39 +45,32 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <h2>Mi Portafolio</h2>
-            <!-- Swiper -->
-            <div class="swiper-container portfolio-swiper">
-                <div class="swiper-wrapper">
-                    
-                    <!-- PROYECTO 1: Producto -->
-                    <div class="swiper-slide portfolio-item">
-                        <img src="images/mate.jpg" alt="Render de Mate con Bombilla"> <!-- Alt text más descriptivo -->
-                        <h3>Visualización 3D de Productos</h3>
-                        <p>Renders de alta calidad para un catálogo de productos modernos, destacando texturas y materiales.</p>
-                    </div>
-
-                    <!-- PROYECTO 2: Ambiente/Interior -->
-                    <div class="swiper-slide portfolio-item">
-                        <img src="images/ambiente-cocina.png" alt="Render de Cocina Moderna">
-                        <h3>Diseño Completo de Interiores</h3>
-                        <p>Visualiza tu ambiente con acabados de lujo.</p>
-                    </div>
-
-                    <!-- PROYECTO 3: Fachada/Arquitectura -->
-                    <div class="swiper-slide portfolio-item">
-                        <img src="images/fachada-edificio.png" alt="Render de Fachada de Edificio Moderno">
-                        <h3>Visualización Arquitectónica</h3>
-                        <p>Propuesta de fachada para un edificio de oficinas, integrando elementos naturales y tecnología.</p>
-                    </div>
-
+            
+            <div class="portfolio-grid">
+                
+                <!-- PROYECTO 1: Producto -->
+                <div class="portfolio-item">
+                    <img src="images/mate.jpg" alt="Render de Mate con Bombilla">
+                    <h3>Visualización 3D de productos</h3>
+                    <p>Renders de alta calidad para un catálogo de productos modernos, destacando texturas y materiales.</p>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Navigation -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+
+                <!-- PROYECTO 2: Ambiente/Interior -->
+                <div class="portfolio-item">
+                    <img src="images/ambiente-cocina.png" alt="Render de Cocina Moderna">
+                    <h3>Diseño de Interiores</h3>
+                    <p>Visualiza tu ambiente con acabados de lujo.</p>
+                </div>
+
+                <!-- PROYECTO 3: Fachada/Arquitectura -->
+                <div class="portfolio-item">
+                    <img src="images/fachada-edificio.png" alt="Render de Fachada de Edificio Moderno">
+                    <h3>Visualización Arquitectónica</h3>
+                    <p>Propuesta de fachada para un edificio de oficinas, integrando elementos naturales y tecnología.</p>
+                </div>
+
             </div>
-            <!-- Fin Swiper -->
+            <!-- Fin Portfolio Grid -->
 
             <div class="full-portfolio-btn-container">
                 <p>¿Buscas más ejemplos? Explora mi portafolio completo:</p>
@@ -94,7 +84,6 @@
         <div class="container">
             <h2>Mis Servicios</h2>
             <div class="services-grid">
-                <!-- Primera Fila de servicios (los eliminados 'wide-item' ya no son necesarios) -->
                 <div class="service-item">
                     <h3>Renders Fotorrealistas de Productos</h3>
                     <p>Crea imágenes impactantes de tus productos antes de la producción, perfectas para e-commerce y marketing.</p>
@@ -103,8 +92,6 @@
                     <h3>Visualización Arquitectónica</h3>
                     <p>Desde fachadas hasta interiores, da vida a tus proyectos arquitectónicos con renders y animaciones.</p>
                 </div>
-
-                <!-- Segunda Fila de servicios -->
                 <div class="service-item">
                     <h3>Diseño y Visualización de Interiores</h3>
                     <p>Diseña y muestra ambientes amueblados con un realismo asombroso, ideal para promotoras y diseñadores.</p>
@@ -120,7 +107,6 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>Sobre Mí</h2>
-            <!-- Asegúrate de tener una imagen 'tu-foto.jpg' en la carpeta 'images/' -->
             <img src="images/tu-foto.jpg" alt="Tu Foto Profesional" class="profile-pic">
             <p>Hola, soy Jonathan y soy un apasionado del diseño 3D con más de 5 años de experiencia en la creación de visualizaciones de alta calidad. Mi objetivo es ayudarte a presentar tus ideas de la manera más atractiva y realista posible, utilizando las últimas herramientas y técnicas en renderizado y modelado 3D.</p>
             <p>He trabajado en proyectos para fábricas y distribuidores de iluminación y arquitectos, entregando resultados que superan las expectativas y contribuyen al éxito visual de mis clientes.</p>
@@ -133,26 +119,21 @@
             <p>¡Estoy listo para transformar tus ideas en impresionantes visualizaciones 3D!</p>
             
             <div class="contact-options">
-                <!-- Botón de WhatsApp -->
-                <!-- Asegúrate de tener una imagen 'whatsapp-icon.png' en la carpeta 'images/' -->
                 <a href="https://wa.me/+541135652652?text=Hola,%20me%20interesan%20tus%20servicios%20de%20diseño%203D." target="_blank" class="whatsapp-btn">
                     <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" class="whatsapp-icon">
                     <span>Hablemos por WhatsApp</span>
                </a>
             </div>
-            <!-- ELIMINADO: La etiqueta </p> extra aquí -->
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Tu mundo en otra dimensión. Todos los derechos reservados.</p> <!-- Copyright actualizado -->
+            <p>&copy; 2023 Tu mundo en otra dimensión. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Enlace a tu archivo JavaScript -->
+    
     <script src="script.js"></script>
 </body>
 </html>
