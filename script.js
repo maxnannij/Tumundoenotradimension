@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 // when window width is >= 768px
                 768: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 30
                 },
                 // when window width is >= 1024px
                 1024: {
-                    slidesPerView: 3, // Mostrar 3 items en pantallas grandes
+                    slidesPerView: 1, // Mostrar 3 items en pantallas grandes
                     spaceBetween: 30
                 }
             }
