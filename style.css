@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    overflow-x: hidden; /* Evita scroll horizontal que podría causar el 3D */
+    /* ELIMINADO: overflow-x: hidden; ya no es estrictamente necesario sin el 3D flotante */
 }
 
 .container {
@@ -139,26 +139,26 @@ header nav a:hover {
 }
 
 /* ------------------------------------------- */
-/* ESTILOS PARA EL CONTENEDOR 3D FLOTANTE */
+/* ELIMINADO: ESTILOS PARA EL CONTENEDOR 3D FLOTANTE */
 /* ------------------------------------------- */
+/*
 #product-3d-container {
-    position: sticky; /* o 'fixed' si quieres que siempre esté en la pantalla */
-    top: 120px; /* Distancia desde la parte superior, ajusta según tu header y diseño */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste fino para centrar */
-    width: 400px; /* Ancho del área 3D */
-    height: 400px; /* Alto del área 3D */
-    z-index: 999; /* Asegura que esté por encima de casi todo el contenido */
-    pointer-events: none; /* Permite interactuar con el contenido debajo del canvas 3D */
-    /* background-color: rgba(255, 0, 0, 0.1);  Útil para depurar, puedes quitarlo */
+    position: sticky; 
+    top: 120px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 400px; 
+    height: 400px; 
+    z-index: 999; 
+    pointer-events: none; 
 }
 
-/* Estilos para el canvas que Three.js crea dentro de #product-3d-container */
 #product-3d-container canvas {
     width: 100% !important;
     height: 100% !important;
-    display: block; /* Elimina espacio extra que algunos navegadores añaden a las imágenes/canvas */
+    display: block; 
 }
+*/
 /* ------------------------------------------- */
 
 
@@ -175,7 +175,7 @@ section {
     background-color: #fff; /* Fondo blanco para las secciones principales */
     margin-bottom: 20px; /* Espacio entre secciones */
     position: relative; /* Importante para el z-index */
-    z-index: 10; /* Asegura que las secciones estén debajo del modelo 3D */
+    /* z-index: 10; Eliminado ya no es tan crítico sin el 3D flotante */
 }
 
 section:nth-of-type(even) { /* Para alternar colores de fondo si quieres */
@@ -203,13 +203,7 @@ h2::after {
     border-radius: 2px;
 }
 
-/* Portafolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas responsivas */
-    gap: 30px;
-}
-
+/* Estilos para los ítems del portafolio dentro del carrusel */
 .portfolio-item {
     background: #fff;
     border: 1px solid #ddd;
@@ -219,6 +213,10 @@ h2::after {
     transition: transform 0.3s ease;
     text-align: left;
     padding-bottom: 20px; /* Espacio para el botón "Ver Más Detalles" */
+    /* Swiper gestionará el ancho, pero definimos un min-width */
+    min-width: 300px; 
+    max-width: 400px; /* Límite para que no se estiren demasiado */
+    margin: 0 auto; /* Centra el item dentro del slide si el slide es más ancho */
 }
 
 .portfolio-item:hover {
@@ -246,30 +244,25 @@ h2::after {
     margin: 0 15px 15px;
 }
 
-/* Estilos para el contenedor del iframe de Sketchfab */
-.sketchfab-embed-container {
-    position: relative;
-    height: 300px; /* Altura fija para el visor de Sketchfab */
-    width: calc(100% - 30px); /* Ancho ajustado al padding del item */
-    margin: 15px; /* Centrarlo un poco */
-    border: 1px solid #eee;
-    background-color: #f0f0f0; /* Color de fondo mientras carga */
-    border-radius: 5px;
-    overflow: hidden; /* Asegurar que el iframe no se salga */
+/* ------------------------------------------- */
+/* ESTILOS PARA SWIPER.JS (CARRUSEL) */
+/* ------------------------------------------- */
+.portfolio-swiper {
+    width: 100%; /* El carrusel ocupa todo el ancho del contenedor */
+    height: auto; /* La altura se ajustará al contenido */
+    padding-bottom: 50px; /* Espacio para la paginación */
 }
 
-.sketchfab-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+/* Estilos para los botones de navegación */
+.swiper-button-next, .swiper-button-prev {
+    color: #007bff !important; /* Color de acento */
 }
 
-.portfolio-item .btn-small {
-    margin-left: 15px;
+/* Estilos para los puntos de paginación */
+.swiper-pagination-bullet-active {
+    background: #007bff !important; /* Color de acento para el punto activo */
 }
+/* ------------------------------------------- */
 
 
 /* Servicios Grid */
@@ -477,7 +470,6 @@ footer {
         font-size: 2rem;
     }
 
-    .portfolio-grid,
     .services-grid {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
@@ -485,16 +477,14 @@ footer {
     .portfolio-item img {
         height: 200px; /* Altura más pequeña en móviles */
     }
-    .sketchfab-embed-container {
-        height: 250px;
-    }
-
-    /* Ajuste para el contenedor 3D en móviles */
+    /* ELIMINADO: Ajuste para el contenedor 3D en móviles */
+    /*
     #product-3d-container {
-        width: 300px; /* Más pequeño en móviles */
+        width: 300px; 
         height: 300px;
-        top: 80px; /* Ajusta la posición para que no choque con el header */
+        top: 80px; 
     }
+    */
 }
 
 @media (max-width: 480px) {
