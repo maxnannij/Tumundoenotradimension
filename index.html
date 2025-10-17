@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,9 @@
     
     <!-- Icono de la pestaña del navegador (favicon) -->
     <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
@@ -33,6 +36,9 @@
         </div>
     </header>
 
+    <!-- ELIMINADO: Contenedor para el modelo 3D flotante -->
+    <!-- <div id="product-3d-container"></div> -->
+
     <section id="home" class="hero">
         <div class="container">
             <h1>Transformo ideas en realidades visuales impactantes.</h1>
@@ -40,54 +46,45 @@
             <a href="#portfolio" class="btn">Ver Portafolio</a>
         </div>
     </section>
-<!-- Contenedor para el modelo 3D flotante -->
-    <div id="product-3d-container">
-        <!-- El modelo 3D se renderizará aquí por JavaScript -->
-    </div>
+
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <h2>Mi Portafolio</h2>
-            <div class="portfolio-grid">
-                
-                <!-- PROYECTO 1: Producto -->
-                <div class="portfolio-item">
-                    <img src="images/mate.jpg" alt="Render de Silla de Diseño">
-                    <h3>Visualización 3D de productos</h3>
-                    <p>Renders de alta calidad para un catálogo de productos modernos, destacando texturas y materiales.</p>
-                     <div class="sketchfab-embed-container">
-                        <!--Reemplaza "SKETCHFAB_MODEL_ID_1" con el ID real de tu modelo de Sketchfab 
-                        <iframe title="Silla Ergonómica" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f3471cfbb56446429921b56cad6f6ee7/embed?autostart=0&preload=1"></iframe>
-                    </div>-->
-                    <!--<a href="#" class="btn-small">Ver Más Detalles</a>  Puedes enlazar a una página de proyecto si la creas -->
+            <!-- Swiper -->
+            <div class="swiper-container portfolio-swiper">
+                <div class="swiper-wrapper">
+                    
+                    <!-- PROYECTO 1: Producto -->
+                    <div class="swiper-slide portfolio-item">
+                        <img src="images/mate.jpg" alt="Render de Silla de Diseño">
+                        <h3>Visualización 3D de productos</h3>
+                        <p>Renders de alta calidad para un catálogo de productos modernos, destacando texturas y materiales.</p>
+                    </div>
+
+                    <!-- PROYECTO 2: Ambiente/Interior -->
+                    <div class="swiper-slide portfolio-item">
+                        <img src="images/ambiente-cocina.jpg" alt="Render de Cocina Moderna">
+                        <h3>Diseño de Interiores</h3>
+                        <p>Visualiza tu ambiente con acabados de lujo.</p>
+                    </div>
+
+                    <!-- PROYECTO 3: Fachada/Arquitectura -->
+                    <div class="swiper-slide portfolio-item">
+                        <img src="images/fachada-edificio.jpg" alt="Render de Fachada de Edificio Moderno">
+                        <h3>Visualización Arquitectónica</h3>
+                        <p>Propuesta de fachada para un edificio de oficinas, integrando elementos naturales y tecnología.</p>
+                    </div>
+
                 </div>
-
-                <!-- PROYECTO 2: Ambiente/Interior -->
-                <div class="portfolio-item">
-                    <img src="images/ambiente-cocina.png" alt="Render de Cocina Moderna">
-                    <h3>Diseño de Interiores</h3>
-                    <p>Visualiza tu ambiente con acabados de lujo.</p>
-                    <div class="sketchfab-embed-container">
-                         <!--Reemplaza "SKETCHFAB_MODEL_ID_2" con el ID real de tu modelo de Sketchfab 
-                        <iframe title="Cocina Minimalista" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/7acc2cb533234488bfe6703df4a96011/embed"></iframe>
-                    </div>-->
-                  <!--  <a href="#" class="btn-small">Ver Más Detalles</a>-->
-                
-
-                <!-- PROYECTO 3: Fachada/Arquitectura -->
-                <div class="portfolio-item">
-                    <img src="images/fachada-edificio.png" alt="Render de Fachada de Edificio Moderno">
-                    <h3>Visualización Arquitectónica</h3>
-                    <p>Propuesta de fachada para un edificio de oficinas, integrando elementos naturales y tecnología.</p>
-                    <div class="sketchfab-embed-container">
-                        <!-- Reemplaza "SKETCHFAB_MODEL_ID_3" con el ID real de tu modelo de Sketchfab  
-                        <iframe title="Edificio Corporativo" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2301b7e5509c4316b6f8b6a982c457d5/embed?autostart=0&preload=1"></iframe>
-                  </div>--> 
-                   <!--  <a href="#" class="btn-small">Ver Más Detalles</a>-->
-                </div>
-
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-        </div>
-        <div class="full-portfolio-btn-container">
+            <!-- Fin Swiper -->
+
+            <div class="full-portfolio-btn-container">
                 <p>¿Buscas más ejemplos? Explora mi portafolio completo:</p>
                 <a href="https://drive.google.com/drive/folders/1fVPvebK4EwY9uShC-dnDSFNETl6R8RQL?usp=drive_link" target="_blank" class="btn">Ver Portafolio Completo (Drive)</a>
             </div>
@@ -95,7 +92,7 @@
         </div>
     </section>
 
-  <section id="services" class="services-section">
+    <section id="services" class="services-section">
         <div class="container">
             <h2>Mis Servicios</h2>
             <div class="services-grid">
@@ -154,7 +151,9 @@
         </div>
     </footer>
 
-    <!-- Enlace a tu archivo JavaScript (opcional, si añades interactividad) -->
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Enlace a tu archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
