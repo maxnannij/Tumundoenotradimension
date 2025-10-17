@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Evita scroll horizontal que podría causar el 3D */
 }
 
 .container {
@@ -105,6 +106,8 @@ header nav a:hover {
     text-align: center;
     padding: 100px 0;
     position: relative;
+    /* Añade un min-height para asegurar que hay contenido debajo y se puede hacer scroll */
+    min-height: 500px;
 }
 
 /* Overlay para hacer el texto más legible sobre la imagen de fondo */
@@ -134,6 +137,31 @@ header nav a:hover {
     font-size: 1.3rem;
     margin-bottom: 30px;
 }
+
+/* ------------------------------------------- */
+/* ESTILOS PARA EL CONTENEDOR 3D FLOTANTE */
+/* ------------------------------------------- */
+#product-3d-container {
+    position: sticky; /* o 'fixed' si quieres que siempre esté en la pantalla */
+    top: 120px; /* Distancia desde la parte superior, ajusta según tu header y diseño */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    width: 400px; /* Ancho del área 3D */
+    height: 400px; /* Alto del área 3D */
+    z-index: 999; /* Asegura que esté por encima de casi todo el contenido */
+    pointer-events: none; /* Permite interactuar con el contenido debajo del canvas 3D */
+    /* background-color: rgba(255, 0, 0, 0.1);  Útil para depurar, puedes quitarlo */
+}
+
+/* Estilos para el canvas que Three.js crea dentro de #product-3d-container */
+#product-3d-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block; /* Elimina espacio extra que algunos navegadores añaden a las imágenes/canvas */
+}
+/* ------------------------------------------- */
+
+
 /* Servicios Grid */
 .services-grid {
     display: grid;
@@ -146,6 +174,8 @@ section {
     text-align: center;
     background-color: #fff; /* Fondo blanco para las secciones principales */
     margin-bottom: 20px; /* Espacio entre secciones */
+    position: relative; /* Importante para el z-index */
+    z-index: 10; /* Asegura que las secciones estén debajo del modelo 3D */
 }
 
 section:nth-of-type(even) { /* Para alternar colores de fondo si quieres */
@@ -457,6 +487,13 @@ footer {
     }
     .sketchfab-embed-container {
         height: 250px;
+    }
+
+    /* Ajuste para el contenedor 3D en móviles */
+    #product-3d-container {
+        width: 300px; /* Más pequeño en móviles */
+        height: 300px;
+        top: 80px; /* Ajusta la posición para que no choque con el header */
     }
 }
 
