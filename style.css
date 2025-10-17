@@ -10,7 +10,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    /* ELIMINADO: overflow-x: hidden; ya no es estrictamente necesario sin el 3D flotante */
 }
 
 .container {
@@ -101,12 +100,12 @@ header nav a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover; /* Fondo hero - ¡Crea esta imagen! */
+    /* Asegúrate de que la ruta de la imagen sea correcta o genera una imagen de fondo */
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 100px 0;
     position: relative;
-    /* Añade un min-height para asegurar que hay contenido debajo y se puede hacer scroll */
     min-height: 500px;
 }
 
@@ -138,31 +137,8 @@ header nav a:hover {
     margin-bottom: 30px;
 }
 
-/* ------------------------------------------- */
-/* ELIMINADO: ESTILOS PARA EL CONTENEDOR 3D FLOTANTE */
-/* ------------------------------------------- */
-/*
-#product-3d-container {
-    position: sticky; 
-    top: 120px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 400px; 
-    height: 400px; 
-    z-index: 999; 
-    pointer-events: none; 
-}
 
-#product-3d-container canvas {
-    width: 100% !important;
-    height: 100% !important;
-    display: block; 
-}
-*/
-/* ------------------------------------------- */
-
-
-/* Servicios Grid */
+/* Servicios Grid - Este bloque estaba duplicado, he eliminado el segundo. */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -175,7 +151,6 @@ section {
     background-color: #fff; /* Fondo blanco para las secciones principales */
     margin-bottom: 20px; /* Espacio entre secciones */
     position: relative; /* Importante para el z-index */
-    /* z-index: 10; Eliminado ya no es tan crítico sin el 3D flotante */
 }
 
 section:nth-of-type(even) { /* Para alternar colores de fondo si quieres */
@@ -213,7 +188,6 @@ h2::after {
     transition: transform 0.3s ease;
     text-align: left;
     padding-bottom: 20px; /* Espacio para el botón "Ver Más Detalles" */
-    /* Swiper gestionará el ancho, pero definimos un min-width */
     min-width: 300px; 
     max-width: 400px; /* Límite para que no se estiren demasiado */
     margin: 0 auto; /* Centra el item dentro del slide si el slide es más ancho */
@@ -265,13 +239,7 @@ h2::after {
 /* ------------------------------------------- */
 
 
-/* Servicios Grid */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
+/* Service Item */
 .service-item {
     background: #fff;
     padding: 30px;
@@ -315,43 +283,7 @@ h2::after {
     color: #444;
 }
 
-/* Contact Section */
-.contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.form-group textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-}
-
-/* Estilos para la nueva sección de Contacto (sin formulario) */
+/* Contact Section (Actualizado para el diseño sin formulario) */
 .contact-section {
     text-align: center;
     padding: 80px 0;
@@ -376,7 +308,7 @@ h2::after {
     margin-bottom: 40px;
 }
 
-/* Estilo para el botón general de contacto (Email) */
+/* Estilo para el botón general de contacto (Email) - Aunque no está en el HTML, lo mantengo por si se añade */
 .contact-btn {
     font-size: 1.1rem;
     padding: 15px 30px;
@@ -410,6 +342,8 @@ h2::after {
     vertical-align: middle; /* Alineación vertical */
 }
 
+/* ELIMINADO: Ya no hay un número de WhatsApp separado del botón */
+/*
 .whatsapp-number {
     font-size: 1rem;
     color: #666;
@@ -425,7 +359,7 @@ h2::after {
 .whatsapp-number a:hover {
     text-decoration: underline;
 }
-
+*/
 
 /* Media Queries para Responsividad del Contacto */
 @media (min-width: 768px) {
@@ -477,14 +411,6 @@ footer {
     .portfolio-item img {
         height: 200px; /* Altura más pequeña en móviles */
     }
-    /* ELIMINADO: Ajuste para el contenedor 3D en móviles */
-    /*
-    #product-3d-container {
-        width: 300px; 
-        height: 300px;
-        top: 80px; 
-    }
-    */
 }
 
 @media (max-width: 480px) {
@@ -508,7 +434,9 @@ footer {
     h2 {
         font-size: 1.8rem;
     }
-    /* Estilos para el contenedor del botón de Portafolio Completo */
+}
+
+/* Estilos para el contenedor del botón de Portafolio Completo */
 .full-portfolio-btn-container {
     margin-top: 60px; /* Espacio superior para separarlo del grid */
     padding-top: 30px; /* Espacio interno para el contenido */
@@ -523,7 +451,4 @@ footer {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* El botón ya usará los estilos existentes de la clase 'btn' */
 }
